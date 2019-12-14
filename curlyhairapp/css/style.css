@@ -5,8 +5,9 @@
   --dark-grey: #707070;
   --light-grey: #f1f1f4;
   --text-color-light: #f1f1f1;
-  --text-color-dark: #333;
-  --font-family: Helvetica, Arial, sans-serif;
+  --text-color-dark: #b999;
+  --shadow: #707070;
+  --font-family: roberto, Arial, sans-serif;
 }
 
 /* ---------- general styling ---------- */
@@ -14,7 +15,7 @@ html {
   color: var(--text-color-dark);
   font-family: var(--font-family);
   height: 100%;
-  width: 100%;
+  width: auto;
 }
 
 body {
@@ -27,62 +28,56 @@ h1 {
   letter-spacing: 3px;
 }
 
-.background {
-  background: linear-gradient(0deg, rgba(240, 234, 238, 1) 60%, rgba(255, 255, 255, 1) 100%);
-}
-
-/* ---------- topbar styling ---------- */
-.topbar {
-  background-color: var(--moerkroed);
-  color: var(--text-color-light);
-  padding: 13.5px;
-  text-transform: uppercase;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-}
-
-.topbar img {
-  width: 100px;
-  float: left;
-}
-
-.topbar a img {
-  width: 30px;
-  color: #fff;
-}
-
-.topbar h2 {
-  margin: 0;
+h2 {
+  font-size: 1em;
   font-weight: 300;
+  letter-spacing: 3px;
 }
 
-.topbar a {
-  position: absolute;
-  right: 30px;
-  top: 25px;
+div {
+  align-items: center;
 }
 
-.topbar svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  height: 150px;
+.background {
+  background: linear-gradient(0deg, rgba(248, 234, 238, 1) 20%, rgba(255, 255, 255, 1) 100%);
+  height: 812px;
 }
 
-/* ---------- tabbar styling ---------- */
+.bottomdark {
+  width: 35%;
+  height: 10%;
+  background-color: var(--moerkroed);
+  border-radius: 15px;
+  box-shadow: 3px 5px var(--shadow);
+}
+
+.bottomdark p {
+  color: var(--text-color-light);
+}
+
+.bottomlight {
+  width: 30%;
+  height: 10%;
+  background-color: var(--light-red);
+  border-radius: 15px;
+  box-shadow: 3px 5px var(--shadow);
+}
+
+.bottomlight p {
+  color: var(--text-color-dark);
+}
+
+/* ---------- TABBAR STYLING ---------- */
 .tabbar {
   background-color: var(--moerkroed);
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 9999;
   width: 100vw;
-  padding: 4% 1%;
-  height: 13%;
+  height: 80px;
+  padding-bottom: 20%;
   text-align: center;
 }
 
@@ -96,47 +91,63 @@ nav {
   color: var(--text-color-light);
   text-align: center;
   text-decoration: none;
-  font-size: 10px;
-  letter-spacing: 0.1em;
+  font-size: 0.8em;
   text-transform: uppercase;
-  width: 90px;
-  height: 90px;
-  padding: 10px 0 0 0;
-}
-
-.btn-floating {
-  position: fixed;
-  left: calc(50% - 23px);
-  bottom: 7%;
+  width: 30%;
 }
 
 .tabbar a img {
-  width: 35px;
+  width: 30%;
+  padding: 1%;
 }
 
 .tabbar a p {
-  color: #000;
-}
-
-/* Change the color of links on hover */
-.tabbar a:hover {
-  color: var(--text-color-dark);
+  color: var(--text-color-light);
 }
 
 /* Add a color to the active/current link */
 .tabbar a.active {
-  color: var(--text-color-light);
+  background-color: var(--text-color-light);
+  padding: 4%;
+}
+
+.tabbar a p.active {
+  color: var(--text-color-dark);
 }
 
 /* ---------- page styling ---------- */
 .page {
-  display: none;
-  /*min heigh is screen heigh minus height of tab and top bar */
-  min-height: calc(100vh);
-  background: var(--green);
-  animation: fadeIn 0.4s;
-  /* padding equals height of tabbar and topbar */
-  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+/* ---------- Forside/test produkter ---------- */
+#tekstbox1 {
+  width: 80%;
+}
+
+#tekstbox1 h1 {
+  text-shadow: 1px 0.5px var(--shadow);
+}
+
+#indtastningsfelt {
+  border-style: solid;
+  border-color: #f1f1f4;
+  border-radius: 15px;
+  box-shadow: 3px 5px var(--shadow);
+  padding: 5%;
+  width: 80%;
+  height: 40%;
+}
+
+#qr {
+  margin: 5%;
+}
+
+#qr p {
+  color: var(--text-color-dark);
 }
 
 /* ---------- logo styling ---------- */
@@ -147,10 +158,4 @@ nav {
 }
 
 /* ---------- Home page ---------- */
-
-
-
-
-
-
 @media screen and (min-width: 415px) and (max-width: 728px) {}
