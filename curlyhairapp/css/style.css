@@ -1,0 +1,156 @@
+/* ---------- root variables ---------- */
+:root {
+  --moerkroed: #b999a0;
+  --light-red: #f0eaee;
+  --dark-grey: #707070;
+  --light-grey: #f1f1f4;
+  --text-color-light: #f1f1f1;
+  --text-color-dark: #333;
+  --font-family: Helvetica, Arial, sans-serif;
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--text-color-dark);
+  font-family: var(--font-family);
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.background {
+  background: linear-gradient(0deg, rgba(240, 234, 238, 1) 60%, rgba(255, 255, 255, 1) 100%);
+}
+
+/* ---------- topbar styling ---------- */
+.topbar {
+  background-color: var(--moerkroed);
+  color: var(--text-color-light);
+  padding: 13.5px;
+  text-transform: uppercase;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.topbar img {
+  width: 100px;
+  float: left;
+}
+
+.topbar a img {
+  width: 30px;
+  color: #fff;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-weight: 300;
+}
+
+.topbar a {
+  position: absolute;
+  right: 30px;
+  top: 25px;
+}
+
+.topbar svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  height: 150px;
+}
+
+/* ---------- tabbar styling ---------- */
+.tabbar {
+  background-color: var(--moerkroed);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  padding: 4% 1%;
+  height: 13%;
+  text-align: center;
+}
+
+nav {
+  line-height: 0px !important;
+}
+
+/* Style the links inside the navigation bar */
+.tabbar a {
+  display: inline-block;
+  color: var(--text-color-light);
+  text-align: center;
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  width: 90px;
+  height: 90px;
+  padding: 10px 0 0 0;
+}
+
+.btn-floating {
+  position: fixed;
+  left: calc(50% - 23px);
+  bottom: 7%;
+}
+
+.tabbar a img {
+  width: 35px;
+}
+
+.tabbar a p {
+  color: #000;
+}
+
+/* Change the color of links on hover */
+.tabbar a:hover {
+  color: var(--text-color-dark);
+}
+
+/* Add a color to the active/current link */
+.tabbar a.active {
+  color: var(--text-color-light);
+}
+
+/* ---------- page styling ---------- */
+.page {
+  display: none;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh);
+  background: var(--green);
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 120px 0;
+}
+
+/* ---------- logo styling ---------- */
+.logo {
+  margin: 2em auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* ---------- Home page ---------- */
+
+
+
+
+
+
+@media screen and (min-width: 415px) and (max-width: 728px) {}
