@@ -38,3 +38,15 @@ function setDefaultPage() {
   }
   showPage(page);
 }
+
+// TABS
+$(document).ready(function(){
+  $('.tabs').tabs();
+});
+
+
+//ingrediensliste collapsible
+
+$(document).ready(function(){
+   $('.collapsible').collapsible();
+ });

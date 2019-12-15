@@ -5,18 +5,28 @@
   <meta charset="utf-8">
   <title>Curlyhair.dk - webapp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Get started with HTML, CSS and JavaScript">
+
   <meta name="author" content="Rasmus Cederdorff">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 </head>
+
+
+
+
+
+
 
 <body>
 
   <!-- tabbar navigation -->
   <nav class="tabbar">
+
 
     <a href="#guide" onclick="showPage('guide')">
       <img src="images/guide.svg" alt="guide">
@@ -44,13 +54,14 @@
     </header>
 <div id="tekstbox1">
 <h1>Er produktet godkendt?</h1>
-<p>Indtast ingredienserne eller scan dit yndlingshårprodukt for at se,   om det er Curly Girl (CG) godkendt! </p>
+<h3>Indtast ingredienserne eller scan dit yndlingshårprodukt for at se,   om det er Curly Girl (CG) godkendt! </h3>
 </div>
 <div>
   <p id="indtastningsfelt">Indsast ingrediensliste her… <br>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
-  <button class="bottomdark"type="TEST" name="testproducts">
-    <p>TEST</p>
-  </button></div>
+
+
+<a class="waves-effect waves-light btn">TEST</a>
+
 
 <div id="qr">
   <a href=""><img src="images/qr.svg" alt="qr">
@@ -82,6 +93,10 @@
     <p>Hmm, there should be some clients right here...</p>
   </section>
 
+
+
+
+
   <!-- Kontakt page -->
   <section id="kontakt" class="page background">
     <header class="topbar">
@@ -91,15 +106,41 @@
   </section>
 
 
+  <!-- Ingrediensliste page -->
+  <section id="kontakt" class="page background">
+    <header class="topbar">
+      <h1>ingredienser</h1>
+    </header>
+    <p>se hvilke</p>
+
+  <ul class="collapsible popout">
+    <li class="active">
+      <div class="collapsible-header">SULFATER</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li class="active">
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li class="active">
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+
+    <li class="active">
+    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+  </li>
+  </ul>
+  </section>
 
 
 
 
-
-  <!-- Compiled and minified JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <!-- main js file -->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <script src="js/main.js"></script>
 </body>
 
