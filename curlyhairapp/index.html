@@ -57,7 +57,20 @@
 <h3>Indtast ingredienserne eller scan dit yndlingshårprodukt for at se,   om det er Curly Girl (CG) godkendt! </h3>
 </div>
 <div>
-  <p id="indtastningsfelt">Indsast ingrediensliste her… <br>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
+
+  <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div id="indtastningsfelt" class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Indsast ingrediensliste her… </label>
+            <p>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  <p >Indsast ingrediensliste her… <br>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
 
 
 <a class="waves-effect waves-light btn">TEST</a>
@@ -91,9 +104,17 @@
       <h2>Søg på produkter her</h2>
     </header>
     <p>Hmm, there should be some clients right here...</p>
+
+
+
+      <h1>ingredienser</h1>
+    </header>
+    <p>se hvilke</p>
+
+
+
+<div id="ingrediens" class="grid-container"></div>
   </section>
-
-
 
 
 
@@ -107,11 +128,19 @@
 
 
   <!-- Ingrediensliste page -->
-  <section id="kontakt" class="page background">
+  <section id="ingrediensside" class="page background">
     <header class="topbar">
       <h1>ingredienser</h1>
     </header>
     <p>se hvilke</p>
+
+
+
+<div id="ingrediens" class="grid-container"></div>
+
+
+
+
 
   <ul class="collapsible popout">
     <li class="active">
