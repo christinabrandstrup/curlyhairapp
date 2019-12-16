@@ -5,115 +5,89 @@
   <meta charset="utf-8">
   <title>Curlyhair.dk - webapp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Get started with HTML, CSS and JavaScript">
-
+  <meta name="description" content="Kom godt i gang med Curly Girl Metoden">
   <meta name="author" content="Rasmus Cederdorff">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
 </head>
-
-
-
-
-
-
 
 <body>
 
   <!-- tabbar navigation -->
   <nav class="tabbar">
-
-
-    <a href="#guide" onclick="showPage('guide')">
-      <img src="images/guide.svg" alt="guide">
-      <p>Guide</p>
-    </a>
-    <a href="#home" onclick="showPage('home')">
-      <img src="images/qr.svg" alt="testprodukter">
-      <p>TEST</p>
-    </a>
-    <a href="#soeg" onclick="showPage('soeg')">
-      <img src="images/soeg.svg" alt="soeg">
-      <p>SØG</p>
-    </a>
-
+    <a href="#guide" onclick="showPage('guide')">Guide</a>
+    <a href="#test" onclick="showPage('test')">TEST</a>
+    <a href="#product" onclick="showPage('product')">Produkter</a>
+      <a href="#kontakt" onclick="showPage('kontakt')">Kontakt os</a>
   </nav>
 
 
 
   <!-- pages -->
   <!-- home page - TEST produkter -->
-  <section id="home" class="page background">
+  <section id="test" class="page background">
     <header class="topbar">
       <a href="#test" onclick="showPage('test')"> </a>
       <a href="info"></a>
     </header>
-<div id="tekstbox1">
-<h1>Er produktet godkendt?</h1>
-<h3>Indtast ingredienserne eller scan dit yndlingshårprodukt for at se,   om det er Curly Girl (CG) godkendt! </h3>
-</div>
-<div>
-
-  <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div id="indtastningsfelt" class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea"></textarea>
-            <label for="textarea1">Indsast ingrediensliste her… </label>
-            <p>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
-          </div>
-        </div>
-      </form>
+    <div id="tekstbox1">
+      <h1>Er produktet godkendt?</h1>
+      <h3>Indtast ingredienserne eller scan dit yndlingshårprodukt for at se, om det er Curly Girl (CG) godkendt! </h3>
     </div>
+    <div>
 
-  <p >Indsast ingrediensliste her… <br>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div id="indtastningsfelt" class="input-field col s12">
+              <textarea id="textarea1" class="materialize-textarea"></textarea>
+              <label for="textarea1">Indsast ingrediensliste her… </label>
+              <p>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
+            </div>
+          </div>
+        </form>
+      </div>
 
-
-<a class="waves-effect waves-light btn">TEST</a>
-
-
-<div id="qr">
-  <a href=""><img src="images/qr.svg" alt="qr">
-  <p>Scan QR kode</p></a>
-
-</div>
-
-
-
-
+      <p>Indsast ingrediensliste her… <br>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
+      <div id="qr">
+        <a href=""><img src="images/qr.svg" alt="qr">
+          <p>Scan QR kode</p>
+        </a>
+      </div>
   </section>
+
+
+
 
   <!-- GUIDE page -->
   <section id="guide" class="page background">
     <header class="topbar">
-
-      <a href="#guide" onclick="showPage('guide')">
-      </a>
+      <a href="#guide" onclick="showPage('guide')"></a>
     </header>
-
 
   </section>
 
-  <!-- Søge side page -->
-  <section id="soeg" class="page background">
+
+
+
+
+  <!-- Produkt side page -->
+  <section id="product" class="page background">
     <header class="topbar">
       <h2>Søg på produkter her</h2>
     </header>
-    <p>Hmm, there should be some clients right here...</p>
 
+    <select id="select-genre" name="genre" onchange="genreSelected(this.value)">
+      <option value="">Vælg produkt type</option>
+    </select>
+    <section id="products-by-genre-container" class="grid-container"></section>
 
+<div class="jep">
+  <input type="search" placeholder="search" nonkeyup="search(this.value)">
+  <section id="products-container" class="grid-container"></section>
 
-      <h1>ingredienser</h1>
-    </header>
-    <p>se hvilke</p>
+</div>
 
-
-
-<div id="ingrediens" class="grid-container"></div>
   </section>
 
 
@@ -121,56 +95,21 @@
   <!-- Kontakt page -->
   <section id="kontakt" class="page background">
     <header class="topbar">
-      <h2>Søg på produkter her</h2>
+      <h2>Kontakt side</h2>
     </header>
-    <p>Hmm, there should be some clients right here...</p>
-  </section>
-
-
-  <!-- Ingrediensliste page -->
-  <section id="ingrediensside" class="page background">
-    <header class="topbar">
-      <h1>ingredienser</h1>
-    </header>
-    <p>se hvilke</p>
-
-
-
-<div id="ingrediens" class="grid-container"></div>
-
-
-
-
-
-  <ul class="collapsible popout">
-    <li class="active">
-      <div class="collapsible-header">SULFATER</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li class="active">
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li class="active">
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-
-    <li class="active">
-    <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-  </li>
-  </ul>
+    <p>Her kommer en kontakt formular</p>
   </section>
 
 
 
 
 
-  <!-- main js file -->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <script src="js/main.js"></script>
+
+
+    <!-- main js file -->
+    
+    <script src="js/main.js"></script>
 </body>
 
 </html>
