@@ -78,11 +78,11 @@ function appendProducts(products) {
      </div>
      <div class="card-content">
        <span class="card-title activator grey-text text-darken-4">${product.title.rendered}<i class="material-icons right">more_vert</i></span>
-     <p>${product.acf.indeholder}</p>
+     <p>${product.acf.indeholder}</p><p>${product.acf.kategori}</p>
      </div>
      <div class="card-reveal">
        <span class="card-title grey-text text-darken-4">${product.title.rendered}<i class="material-icons right">close</i></span>
-       <p>${product.acf.indeholder}</p>
+       <p>${product.acf.tags}</p><a href="${product.acf.kob}">KØB</a>
        <div> <h4>Anvendelse</h4>
        <p>${product.acf.beskrivelse}</p></div>
        <div> <h4>Ingrediensliste</h4>
@@ -90,7 +90,6 @@ function appendProducts(products) {
        <p>${product.acf.andet}</p>
      </div>
    </div>
-
        </article>
      `;
   }
@@ -162,12 +161,26 @@ function appendProductsByGenre(productsByGenre) {
 
   for (let product of productsByGenre) {
     htmlTemplate += `
-      <article>
-        <h2>${product.title.rendered}</h2>
-        <img src="${product.acf.img}">
-        <p>${product.acf.description}</p>
-        <iframe src="${product.acf.trailer}"></iframe>
-      </article>
+    <article>
+    <div class="card">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="${product.acf.img}">
+  </div>
+  <div class="card-content">
+    <span class="card-title activator grey-text text-darken-4">${product.title.rendered}<i class="material-icons right">more_vert</i></span>
+  <p>${product.acf.indeholder}</p><p>${product.acf.kategori}</p>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">${product.title.rendered}<i class="material-icons right">close</i></span>
+    <p>${product.acf.tags}</p><a href="${product.acf.kob}">KØB</a>
+    <div> <h4>Anvendelse</h4>
+    <p>${product.acf.beskrivelse}</p></div>
+    <div> <h4>Ingrediensliste</h4>
+    <p>${product.acf.ingrediensliste}</p></div>
+    <p>${product.acf.andet}</p>
+  </div>
+</div>
+    </article>
     `;
   }
 
