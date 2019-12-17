@@ -4,10 +4,11 @@
   --light-red: #f0eaee;
   --dark-grey: #707070;
   --light-grey: #f1f1f4;
+--text-moerkroed: #b999a0;
   --text-color-light: #f1f1f1;
-  --text-color-dark: #b999;
-  --shadow: #AFADAD;
-  --font-family: roberto, Arial, sans-serif;
+  --text-color-dark: #000;
+  --shadow: #f0eaee;
+  --font-family: Monterat, Arial, sans-serif;
 }
 
 /* ============== general styling ========== */
@@ -20,7 +21,7 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(0deg, rgba(248, 234, 238, 1) 20%, rgba(255, 255, 255, 1) 100%);
+  background: linear-gradient(0deg, rgba(248, 234, 238, 1) 100%, rgba(255, 255, 255, 1) 100%);
   background-size: 100%;
 }
 
@@ -28,6 +29,8 @@ h1 {
   font-size: 2.2em;
   font-weight: 300;
   letter-spacing: 1px;
+  color: var(--text-moerkroed)
+
 }
 
 h2 {
@@ -38,7 +41,9 @@ h2 {
 
 h3 {
   font-size: 1.2em;
-  font-weight: 200;
+  font-weight: 600;
+  text-align: left;
+  color: var(--text-moerkroed)
 }
 
 h4 {
@@ -52,29 +57,45 @@ p {
   font-weight: 100;
 }
 
+ul {
+  list-style-type: disc;
+}
+
+div > a > p {
+  color: var(--text-moerkroed)
+}
+
+div > a > img {
+  color: var(--moerkroed)
+}
+section {
+  display: flex;
+  align-items: center;
+}
+
 /* --------- KNAPPER -------- */
-.bottomdark {
-  width: 35%;
-  height: auto;
+section > .bottomdark {
+  width: 70%;
   background-color: var(--moerkroed);
   border-radius: 15px;
   box-shadow: 2px 3px var(--shadow);
-  margin: 5% 0 10% 0;
+  padding: 5%;
+  margin: 5%;
 }
 
-.bottomdark p {
+.bottomdark a {
   color: var(--text-color-light);
 }
 
 .bottomlight {
   width: 30%;
-  height: 10%;
+  height: auto;
   background-color: var(--light-red);
   border-radius: 15px;
   box-shadow: 3px 5px var(--shadow);
 }
 
-.bottomlight p {
+.bottomlight a {
   color: var(--text-color-dark);
 }
 
@@ -138,26 +159,22 @@ nav {
   /*min heigh is screen heigh minus height of tab and top bar */
   min-height: calc(100vh);
   animation: fadeIn 0.4s;
-  align-items: center;
-}
+  }
 
 #help {
-  display: block;
+
   float: right;
   padding: 5% 5%;
+  color: var(--text-moerkroed);
 }
 
 /* ---------- Forside/test produkter ---------- */
 #test {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 #tekstbox1 {
-  display: flex;
-  flex-direction: column;
+
   width: 80%;
   padding: 5%;
   text-align: center;
@@ -168,10 +185,7 @@ form {
 }
 
 #indtastningsfelt {
-  display: flex;
-  flex-direction: column;
   width: 70%;
-  text-align: center;
 }
 
 #textarea1 {
@@ -182,10 +196,31 @@ form {
 }
 
 #qr {
-  display: flex;
   width: 20%;
-  text-align: center;
 }
+
+/* ------------ GUIDE ---------*/
+
+
+/* ------------ Om metoden ---------*/
+.textboxguide{
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 3px 3px var(--shadow);
+  width: 80%;
+  padding: 7%;
+  margin: 0 0 7% 0;
+  text-align: left;
+  background-color: white;
+}
+section > div > #minul {
+  list-style-type: circle !important;
+}
+
+
+/* ------------ Step by step ---------*/
+
 
 /* ---------- Product side---------- */
 /* Grid container */
