@@ -4,11 +4,14 @@
 <head>
   <meta charset="utf-8">
   <title>Curlyhair.dk - webapp</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Kom godt i gang med Curly Girl Metoden">
-  <meta name="author" content="Rasmus Cederdorff">
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
 </head>
 
 <body>
@@ -18,24 +21,25 @@
     <a href="#guide" onclick="showPage('guide')">Guide</a>
     <a href="#test" onclick="showPage('test')">TEST</a>
     <a href="#product" onclick="showPage('product')">Produkter</a>
-      <a href="#kontakt" onclick="showPage('kontakt')">Kontakt os</a>
+
   </nav>
 
 
 
   <!-- pages -->
   <!-- home page - TEST produkter -->
-  <section id="test" class="page background">
+  <section id="test" class="page">
     <header class="topbar">
       <a href="#test" onclick="showPage('test')"> </a>
       <a href="info"></a>
     </header>
+    <button id="help" type="button" name="button"><a href="#product" onclick="showPage('product')">HJÆLP</a></button>
+
     <div id="tekstbox1">
       <h1>Er produktet godkendt?</h1>
       <h3>Indtast ingredienserne eller scan dit yndlingshårprodukt for at se, om det er Curly Girl (CG) godkendt! </h3>
     </div>
     <div>
-
       <div class="row">
         <form class="col s12">
           <div class="row">
@@ -47,8 +51,7 @@
           </div>
         </form>
       </div>
-
-      <p>Indsast ingrediensliste her… <br>(Adskil ingredienser med komma, og klik på indsende for at se resultaterne.)</p>
+      <button class="bottomdark" type="button" name="button">TEST</button>
       <div id="qr">
         <a href=""><img src="images/qr.svg" alt="qr">
           <p>Scan QR kode</p>
@@ -60,7 +63,7 @@
 
 
   <!-- GUIDE page -->
-  <section id="guide" class="page background">
+  <section id="guide" class="page">
     <header class="topbar">
       <a href="#guide" onclick="showPage('guide')"></a>
     </header>
@@ -72,7 +75,7 @@
 
 
   <!-- Produkt side page -->
-  <section id="product" class="page background">
+  <section id="product" class="page">
     <header class="topbar">
       <h2>Søg på produkter her</h2>
     </header>
@@ -82,18 +85,33 @@
     </select>
     <section id="products-by-genre-container" class="grid-container"></section>
 
-<div class="jep">
-  <input type="search" placeholder="search" nonkeyup="search(this.value)">
-  <section id="products-container" class="grid-container"></section>
+    <div class="jep">
 
-</div>
+      <section id="products-container" class="grid-container"></section>
+
+  <!-- laver fejl
+<input type="search" placeholder="search" nonkeyup="search(this.value)">
+-->
+
+    </div>
 
   </section>
 
 
 
+
+
+
+
+
+
+
+
+
+
+
   <!-- Kontakt page -->
-  <section id="kontakt" class="page background">
+  <section id="kontakt" class="page">
     <header class="topbar">
       <h2>Kontakt side</h2>
     </header>
@@ -105,11 +123,14 @@
 
 
 
+  <!-- main js file -->
+  <script src="js/main.js"></script>
+
+  <!-- materialize js file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 
-    <!-- main js file -->
-    
-    <script src="js/main.js"></script>
+
 </body>
 
 </html>

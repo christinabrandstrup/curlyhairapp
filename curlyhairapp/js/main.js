@@ -1,4 +1,6 @@
 "use strict";
+
+
 // =========== Single Page Application functionality =========== //
 
 // hide all pages
@@ -48,7 +50,7 @@ setDefaultPage();
 let products = [];
 
 // fetch all products from WP
-function getproducts() {
+function getProducts() {
   fetch('http://curlyhairapp.christinab.dk/wp-json/wp/v2/posts?_embed')
     .then(function(response) {
       return response.json();
@@ -57,27 +59,37 @@ function getproducts() {
       console.log(json);
       appendProducts(json);
       products = json;
-      setTimeout(function() {
-        showLoader(false);
-      }, 200);
+      setTimeout(function() {}, 200);
     });
 }
 
 getProducts();
 
-// append movies to the DOM
+// append products to the DOM
 function appendProducts(products) {
   let htmlTemplate = "";
 
   for (let product of products) {
     htmlTemplate += `
        <article>
-         <h2>${product.title.rendered}</h2>
-         <img src="${product.acf.img}">
-         <p>${product.acf.indeholder}</p>
-         <p>${product.acf.beskrivelse}</p>
-         <p>${product.acf.ingrediensliste}</p>
-         <p>${product.acf.andet}</p>
+       <div class="card">
+     <div class="card-image waves-effect waves-block waves-light">
+       <img class="activator" src="${product.acf.img}">
+     </div>
+     <div class="card-content">
+       <span class="card-title activator grey-text text-darken-4">${product.title.rendered}<i class="material-icons right">more_vert</i></span>
+     <p>${product.acf.indeholder}</p>
+     </div>
+     <div class="card-reveal">
+       <span class="card-title grey-text text-darken-4">${product.title.rendered}<i class="material-icons right">close</i></span>
+       <p>${product.acf.indeholder}</p>
+       <div> <h4>Anvendelse</h4>
+       <p>${product.acf.beskrivelse}</p></div>
+       <div> <h4>Ingrediensliste</h4>
+       <p>${product.acf.ingrediensliste}</p></div>
+       <p>${product.acf.andet}</p>
+     </div>
+   </div>
 
        </article>
      `;
@@ -87,18 +99,19 @@ function appendProducts(products) {
 }
 
 // search functionality
-function search(value) {
-  let searchQuery = value.toLowerCase();
-  let filteredProducts = [];
-  for (let product of products) {
-    let title = product.title.rendered.toLowerCase();
-    if (title.includes(searchQuery)) {
-      filteredProducts.push(movie);
-    }
-  }
-  console.log(filteredProducts);
-  appendProducts(filteredProduct);
-}
+//function search(value) {
+//let searchQuery = value.toLowerCase();
+//  let filteredProducts = [];
+//  for (let product of products) {
+//    let title = product.title.rendered.toLowerCase();
+//    if (title.includes(searchQuery)) {
+//      filteredProducts.push(product);
+//    }
+//  }
+//  console.log(filteredProducts);
+//  appendProducts(filteredProducts);
+//}
+
 
 // fetch all genres / categories from WP
 function getGenres() {
@@ -126,11 +139,10 @@ function appendGenres(genres) {
   document.querySelector('#select-genre').innerHTML += htmlTemplate;
 }
 
-// genre selected event - fetch movies by selected category
+// genre selected event - fetch product by selected category
 function genreSelected(genreId) {
   console.log(`Genre ID: ${genreId}`);
   if (genreId) {
-    showLoader(true);
     fetch(`http://curlyhairapp.christinab.dk/wp-json/wp/v2/posts?_embed&categories=${genreId}`)
       .then(function(response) {
         return response.json();
@@ -138,7 +150,6 @@ function genreSelected(genreId) {
       .then(function(products) {
         console.log(products);
         appendProductsByGenre(products);
-        showLoader(false);
       });
   } else {
     // create feedback
