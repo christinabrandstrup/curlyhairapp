@@ -34,6 +34,8 @@ h1 {
   font-family: viktorie, sans-serif;
   font-weight: 400;
   font-style: normal;
+  text-align: center;
+  padding: 15% 5% 5% 5%;
 }
 
 h2 {
@@ -163,6 +165,7 @@ nav {
   /*min heigh is screen heigh minus height of tab and top bar */
   min-height: calc(100vh);
   animation: fadeIn 0.4s;
+  align-items: center;
 }
 
 #help {
@@ -213,6 +216,7 @@ form {
   margin: 0 0 7% 0;
   text-align: left;
   background-color: white;
+  align-items: center;
 }
 
 section>div>#minul {
@@ -221,7 +225,22 @@ section>div>#minul {
 
 /* ------------ Step by step ---------*/
 /* ---------- Product side---------- */
+
+#alle {
+  padding: 3%;
+}
+
+article > div > div > img {
+  align-items: center;
+}
+
+
+
+
+
+
 /* Grid container */
+
 .grid-container {
   display: grid;
   grid-template-columns: 100%;
