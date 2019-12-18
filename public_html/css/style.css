@@ -4,17 +4,18 @@
   --light-red: #f0eaee;
   --dark-grey: #707070;
   --light-grey: #f1f1f4;
---text-moerkroed: #b999a0;
+  --text-moerkroed: #b999a0;
   --text-color-light: #f1f1f1;
   --text-color-dark: #000;
   --shadow: #f0eaee;
-  --font-family: Monterat, Arial, sans-serif;
 }
 
 /* ============== general styling ========== */
 html {
   color: var(--text-color-dark);
-  font-family: var(--font-family);
+  font-family: montserrat, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   height: auto;
   width: 100%;
 }
@@ -29,8 +30,10 @@ h1 {
   font-size: 2.2em;
   font-weight: 300;
   letter-spacing: 1px;
-  color: var(--text-moerkroed)
-
+  color: var(--text-moerkroed);
+  font-family: viktorie, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h2 {
@@ -61,20 +64,21 @@ ul {
   list-style-type: disc;
 }
 
-div > a > p {
+div>a>p {
   color: var(--text-moerkroed)
 }
 
-div > a > img {
+div>a>img {
   color: var(--moerkroed)
 }
+
 section {
   display: flex;
   align-items: center;
 }
 
 /* --------- KNAPPER -------- */
-section > .bottomdark {
+section>.bottomdark {
   width: 70%;
   background-color: var(--moerkroed);
   border-radius: 15px;
@@ -159,10 +163,9 @@ nav {
   /*min heigh is screen heigh minus height of tab and top bar */
   min-height: calc(100vh);
   animation: fadeIn 0.4s;
-  }
+}
 
 #help {
-
   float: right;
   padding: 5% 5%;
   color: var(--text-moerkroed);
@@ -174,7 +177,6 @@ nav {
 }
 
 #tekstbox1 {
-
   width: 80%;
   padding: 5%;
   text-align: center;
@@ -200,10 +202,8 @@ form {
 }
 
 /* ------------ GUIDE ---------*/
-
-
 /* ------------ Om metoden ---------*/
-.textboxguide{
+.textboxguide {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
@@ -214,14 +214,12 @@ form {
   text-align: left;
   background-color: white;
 }
-section > div > #minul {
+
+section>div>#minul {
   list-style-type: circle !important;
 }
 
-
 /* ------------ Step by step ---------*/
-
-
 /* ---------- Product side---------- */
 /* Grid container */
 .grid-container {
